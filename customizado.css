@@ -1,0 +1,39 @@
+.bg-1{
+	background-color: #8A4602;
+	color: white;
+}
+.bg-1 h1{
+	font-size: 50px;
+}
+.bg-1 p{
+	font-size: 24px;
+	font-weight: normal;
+}
+
+.img-reg{
+	width: 350px;
+	height: 350px;
+}
+
+.bg-2{
+	background-color: #8A4602;
+	color: black;
+}
+
+.bg-3{
+	background-color: #E5AC74;
+	color: black;
+}
+
+.bg-3-1{
+	padding-right: 30%;
+	padding-left: 30%; 
+}
+
+.bg-3-1 input{
+	color: black;
+}
+
+.bg-3-1 button{
+	border-radius: 10px;
+}
