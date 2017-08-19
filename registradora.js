@@ -1,6 +1,10 @@
 var conta = [];	
-
- 	function adicionar_item(){
+  
+  $(function(){
+          $("#valor").maskMoney();
+  })
+ 	
+  function adicionar_item(){
  		var total = valor.value*quantidade.value;
 
   		var f = document.createTextNode(quantidade.value+"x "+item.value+" | Preço unitário: R$ "+valor.value+" | Preço: R$ "+total);
