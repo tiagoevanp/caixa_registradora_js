@@ -1,35 +1,27 @@
-.bg-1{
-	background-color: #8A4602;
+#logo-img {
+	width: 100%;
+	margin: 20px;
+}
+
+#titulo {
+	overflow-wrap: break-word;
+	margin-bottom: 20px;
+}
+
+#dolar {
+	color: green;
+}
+
+.brown h1, .brown h6 {
 	color: white;
-}
-.bg-1 h1{
-	font-size: 50px;
-}
-.bg-1 p{
-	font-size: 24px;
-	font-weight: normal;
+	text-shadow: 2px 2px #2d2d2d;
 }
 
-.img-reg{
-	width: 350px;
-	height: 350px;
-}
 
-.bg-2{
-	background-color: #8A4602;
-	color: black;
-}
+/* Sorry aboute that, that is the only way I find to 
+turn responsive the valign-wrapper when in mobile-device */
 
-.bg-3{
-	background-color: #E5AC74;
-	color: black;
-}
-
-.bg-3-1{
-	padding-right: 30%;
-	padding-left: 30%; 
-}
-
-.bg-3-1 input{
-	color: black;
-}
+	@media only screen and (max-width: 600px) { 
+		.row.valign-wrapper { 
+			display: inherit; 
+	}

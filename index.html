@@ -6,41 +6,45 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>Caixa Registradora</title>
 	<link rel="stylesheet" type="text/css" href="libs/materialize/css/materialize.min.css">
-	<link rel="stylesheet" type="text/css" href="css/customizado.css">
+	<link rel="stylesheet" type="text/css" href="css/folha_de_estilos.css">
 	<script type="text/javascript" src="libs/materialize/js/materialize.min.js"></script>
 	<script type="text/javascript" src="js/registradora.js"></script>
 </head>
 
 <body>
-	<div class="">
-		<h1>Caixa Registradora</h1>
-		<img src="imagens/registradora.jpg" class="img-circle img-reg">
-		<p>Bem-vindo ao meu exemplo de máquina registradora em Javascript.</p>
+	<div class="row valign-wrapper brown darken-2">
+		<div class="col s11 m6 l4">
+			<img class="circle z-depth-3" id="logo-img" src="imagens/registradora.jpg">
+		</div>
+		<div id="titulo" class="col s12 m6 l8 center-align">
+			<h1> CA<span id="dolar">$</span>HIER MACHINE</h1>
+			<h6>Welcome to my exemple of a cashier machine in Javascript.</h6>
+		</div>
 	</div>
 
-	<div class="">
+	<!-- <div class="">
 		<form id="formulario" class="form-horizontal">
 			<label class="">Quantidade:</label>
-			<input class="form-control" type="number" name="quantidade" id="quantidade">
+			<input class="" type="number" name="quantidade" id="quantidade">
 			
 			<label class="control-label col-sm-2">Item:</label>
-			<input class="form-control" type="text" name=" item" id="item">
+			<input class="" type="text" name=" item" id="item">
 			
 			<label class="control-label col-sm-2">Valor:</label>
-			<input class="form-control" type="text" name="valor" id="valor"> <br>
+			<input class="" type="text" name="valor" id="valor"> <br>
 
-			<button class="btn btn-default" type="button" name="adicionar" onclick="adicionar_item()">Registrar</button>
-			<button class="btn btn-default" type="button" name="total" onclick="imprimir_total()">Total</button> 
-			<button class="btn btn-danger" type="button" name="limpar" onclick="limpar_registros()">Zerar</button>
+			<button class="" type="button" name="adicionar" onclick="adicionar_item()">Registrar</button>
+			<button class="" type="button" name="total" onclick="imprimir_total()">Total</button> 
+			<button class="" type="button" name="limpar" onclick="limpar_registros()">Zerar</button>
 		</form>
 	
-	<div class="container" id="compra"></div>
+	<div class="" id="compra"></div>
 	</div>
 	
 	<div class="">
 		<h2>Tiago Evan ©</h2><br>
 		<p>Obrigado por estar aqui! ;)</p>
-	</div>
+	</div> -->
 </body>
 
 </html>
