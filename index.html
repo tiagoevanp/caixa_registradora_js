@@ -3,58 +3,41 @@
 
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>Caixa Registradora</title>
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="customizado.css">
-	<script type="text/javascript" src="registradora.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
-	<script>
-		  $(function(){
-          $("#valor").maskMoney();
-  })
-	</script>
+	<link rel="stylesheet" type="text/css" href="libs/materialize/css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="css/customizado.css">
+	<script type="text/javascript" src="libs/materialize/js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/registradora.js"></script>
 </head>
 
 <body>
-	<div class="container-fluid bg-1 text-center">
+	<div class="">
 		<h1>Caixa Registradora</h1>
-		<img src="registradora.jpg" class="img-circle img-reg">
+		<img src="imagens/registradora.jpg" class="img-circle img-reg">
 		<p>Bem-vindo ao meu exemplo de máquina registradora em Javascript.</p>
 	</div>
 
-	<div class="container-fluid bg-3 text-center">
-		<br><br>
+	<div class="">
 		<form id="formulario" class="form-horizontal">
-			<div class="form-group bg-3-1">
-				<label class="control-label col-sm-2">Quantidade:</label>
-					<div class="col-sm-10">
-						<input class="form-control" type="number" name="quantidade" id="quantidade">
-					</div>
-			</div>
-			<div class="form-group bg-3-1">
-				<label class="control-label col-sm-2">Item:</label>
-					<div class="col-sm-10">
-						<input class="form-control" type="text" name=" item" id="item">
-					</div>
-			</div>
-			<div class="form-group bg-3-1">
-				<label class="control-label col-sm-2">Valor:</label>
-					<div class="col-sm-10">
-						<input class="form-control" type="text" name="valor" id="valor"> <br>
-					</div>
-			</div>
-			<div class="btn-group">
-				<button class="btn btn-default" type="button" name="adicionar" onclick="adicionar_item()">Registrar</button>
-				<button class="btn btn-default" type="button" name="total" onclick="imprimir_total()">Total</button> 
-				<button class="btn btn-danger" type="button" name="limpar" onclick="limpar_registros()">Zerar</button>
-			</div>
-			<br><br>
+			<label class="">Quantidade:</label>
+			<input class="form-control" type="number" name="quantidade" id="quantidade">
+			
+			<label class="control-label col-sm-2">Item:</label>
+			<input class="form-control" type="text" name=" item" id="item">
+			
+			<label class="control-label col-sm-2">Valor:</label>
+			<input class="form-control" type="text" name="valor" id="valor"> <br>
+
+			<button class="btn btn-default" type="button" name="adicionar" onclick="adicionar_item()">Registrar</button>
+			<button class="btn btn-default" type="button" name="total" onclick="imprimir_total()">Total</button> 
+			<button class="btn btn-danger" type="button" name="limpar" onclick="limpar_registros()">Zerar</button>
 		</form>
-		<div class="container" id="compra"></div>
+	
+	<div class="container" id="compra"></div>
 	</div>
 	
-	<div class="container-fluid bg-2 text-center">
+	<div class="">
 		<h2>Tiago Evan ©</h2><br>
 		<p>Obrigado por estar aqui! ;)</p>
 	</div>
