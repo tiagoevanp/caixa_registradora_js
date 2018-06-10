@@ -1,4 +1,11 @@
-    var conta = [];	
+    //Initialization of tooltips
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.tooltipped');
+      console.log(elems)
+      var instances = M.Tooltip.init(elems);
+    });
+
+    var conta = []; 
     
     function adicionar_item(){
       var total = valor.value*quantidade.value;

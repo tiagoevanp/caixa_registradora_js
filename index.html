@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>Caixa Registradora</title>
 	<link rel="stylesheet" type="text/css" href="libs/materialize/css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" type="text/css" href="css/folha_de_estilos.css">
 	<script type="text/javascript" src="libs/materialize/js/materialize.min.js"></script>
 	<script type="text/javascript" src="js/registradora.js"></script>
@@ -22,29 +23,46 @@
 		</div>
 	</div>
 
-	<!-- <div class="">
-		<form id="formulario" class="form-horizontal">
-			<label class="">Quantidade:</label>
-			<input class="" type="number" name="quantidade" id="quantidade">
-			
-			<label class="control-label col-sm-2">Item:</label>
-			<input class="" type="text" name=" item" id="item">
-			
-			<label class="control-label col-sm-2">Valor:</label>
-			<input class="" type="text" name="valor" id="valor"> <br>
-
-			<button class="" type="button" name="adicionar" onclick="adicionar_item()">Registrar</button>
-			<button class="" type="button" name="total" onclick="imprimir_total()">Total</button> 
-			<button class="" type="button" name="limpar" onclick="limpar_registros()">Zerar</button>
-		</form>
-	
-	<div class="" id="compra"></div>
+	<div class="row">
+		<div class="container col s6 m6 l6">
+			<form id="formulario">
+				<div class="row">
+					<div class="input-field col s12 m12 l3">
+						<input type="number" min="1" name="quantity" id="quantity">
+						<label for="quantity">Quantity:</label>
+					</div>
+					<div class="input-field col s12 m12 l9">
+						<input type="text" name="item" id="item">
+						<label for="item">Item:</label>
+					</div>
+				</div>
+				<div class="input-field">
+					<input type="number" min="1" name="value" id="value">
+					<label for="value">Value:</label>
+				</div>
+				<div class="container center">
+					<button class="btn-reg green darken-4 waves-effect waves-light btn" name="reg" type="button" onclick="adicionar_item()">Reg</button>
+					<button class="btn-reg green darken-4 waves-effect waves-light btn" name="total" type="button" onclick="imprimir_total()">Total</button>
+					<button class="btn-reg red waves-effect waves-light btn" name="clean" type="button" onclick="limpar_registros()">Clean</button>
+				</div>
+			</form>
+		</div>
+		<div class="container col s6 m6 l6 center" id="compra"></div>
 	</div>
 	
-	<div class="">
-		<h2>Tiago Evan ©</h2><br>
-		<p>Obrigado por estar aqui! ;)</p>
-	</div> -->
+	<footer class="page-footer brown">
+		<div class="container center">
+    	<a href="https://github.com/tiagoevanp" target="_blank">
+    		<img class="tooltipped" data-position="bottom" data-tooltip="For more exemples..." src="imagens/github-circle.png">
+    	</a>
+		</div>
+		<div class="footer-copyright">
+      <div class="container">
+				<p class="left">Thanks for being here!</p>        
+      	<p class="right">Tiago Evan's Page</p>
+      </div>
+    </div>
+	</footer>
 </body>
 
 </html>

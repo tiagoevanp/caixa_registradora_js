@@ -17,10 +17,27 @@
 	text-shadow: 2px 2px #2d2d2d;
 }
 
+.btn-reg {
+	margin: 10px;
+}
+
+/*changes directly on the lib*/
+	.material-tooltip {
+		background-color: white;
+		color: black;
+	}
+	
+	.input-field input:focus + label{
+	 color: brown !important;
+	}
+	
+	.input-field input:focus {
+	 border-bottom: 1px solid brown !important;
+	 box-shadow: 0 1px 0 0 brown !important;
+	}
 
 /* Sorry aboute that, that is the only way I find to 
 turn responsive the valign-wrapper when in mobile-device */
-
 	@media only screen and (max-width: 600px) { 
 		.row.valign-wrapper { 
 			display: inherit; 
