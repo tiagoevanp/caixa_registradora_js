@@ -22,34 +22,41 @@
 			<h6>Welcome to my exemple of a cashier machine in Javascript.</h6>
 		</div>
 	</div>
-
-	<div class="row">
-		<div class="container col s6 m6 l6">
-			<form id="formulario">
-				<div class="row">
-					<div class="input-field col s12 m12 l3">
-						<input type="number" min="1" name="quantity" id="quantity">
-						<label for="quantity">Quantity:</label>
-					</div>
-					<div class="input-field col s12 m12 l9">
-						<input type="text" name="item" id="item">
-						<label for="item">Item:</label>
-					</div>
+	<div class="container">
+		<form id="formulario" class="container">
+			<div class="row">
+				<div class="input-field col s12 m12 l3">
+					<input type="number" min="1" name="quantity" id="quantity">
+					<label for="quantity">Quantity:</label>
 				</div>
-				<div class="input-field">
-					<input type="number" min="1" name="value" id="value">
-					<label for="value">Value:</label>
+				<div class="input-field col s12 m12 l9">
+					<input type="text" name="item" id="item">
+					<label for="item">Item:</label>
 				</div>
-				<div class="container center">
-					<button class="btn-reg green darken-4 waves-effect waves-light btn" name="reg" type="button" onclick="adicionar_item()">Reg</button>
-					<button class="btn-reg green darken-4 waves-effect waves-light btn" name="total" type="button" onclick="imprimir_total()">Total</button>
-					<button class="btn-reg red waves-effect waves-light btn" name="clean" type="button" onclick="limpar_registros()">Clean</button>
-				</div>
-			</form>
+			</div>
+			<div class="input-field">
+				<input type="number" min="1" name="value" id="value" onchange="maskMoney()">
+				<label for="value">Value:</label>
+			</div>
+			<div class="container center">
+				<button class="btn-reg green darken-4 waves-effect waves-light btn" name="reg" type="button" onclick="registerItem()">Reg</button>
+				<button class="btn-reg green darken-4 waves-effect waves-light btn" name="total" type="button" onclick="showTotal()">Total</button>
+				<button class="btn-reg red waves-effect waves-light btn" name="clean" type="button" onclick="cleanInvoice()">Clean</button>
+			</div>
+		</form>
+		<div id="invoice" class="container yellow lighten-3 center z-depth-3" id="compra">
+			<!-- <ul class="pagination">
+		    <li class="disabled"><a href="javascript:"><i class="material-icons">chevron_left</i></a></li>
+		    <li class="active"><a href="javascript:">1</a></li>
+		    <li class="waves-effect"><a href="javascript:">2</a></li>
+		    <li class="waves-effect"><a href="javascript:">3</a></li>
+		    <li class="waves-effect"><a href="javascript:">4</a></li>
+		    <li class="waves-effect"><a href="javascript:">5</a></li>
+		    <li class="waves-effect"><a href="javascript:"><i class="material-icons">chevron_right</i></a></li>
+		  </ul> -->
 		</div>
-		<div class="container col s6 m6 l6 center" id="compra"></div>
 	</div>
-	
+
 	<footer class="page-footer brown">
 		<div class="container center">
     	<a href="https://github.com/tiagoevanp" target="_blank">
