@@ -1,7 +1,7 @@
 //Initialization of tooltips
 document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.tooltipped');
-  var instances = M.Tooltip.init(elems);
+  var elements = document.querySelectorAll('.tooltipped');
+  var instances = M.Tooltip.init(elements);
 });
 
 function maskMoney() {
@@ -9,44 +9,96 @@ function maskMoney() {
   document.getElementById('value').value = Number(money).toFixed(2);
 }
 
-var conta = []; 
+var invoice = []; 
 
 function registerItem(){
-  if (quantity.value == "") {
-    quantity.value = 1
+  if (!quantity.value) {
+    quantity.value = 1;
   }
-  if (item.value == "") {
+  if (!item.value) {
     item.value = "something";
   }
-  if (value.value == "") {
+  if (!value.value) {
     value.value = 0;
   }
-  var total = value.value*quantity.value;
-  var f = document.createTextNode(quantity.value+"x "+item.value+" | Price: $ "+value.value);
-  var elemento1 = document.createElement("P");
-  elemento1.appendChild(f);
-  document.getElementById("invoice").appendChild(elemento1);
   
-  conta.push(total);
+  var total = value.value*quantity.value;
+  var textQuantity = document.createTextNode(quantity.value+"x");
+  var textItem = document.createTextNode(item.value);
+  var textValue = document.createTextNode(Number(value.value).toFixed(2));
+  var textTotal = document.createTextNode((value.value * quantity.value).toFixed(2));
+  var tr = document.createElement("tr");
+  var tdQuantity = document.createElement("td");
+  var tdItem = document.createElement("td");
+  var tdValue = document.createElement("td");
+  var tdTotal = document.createElement("td");
+  tr.appendChild(tdQuantity);
+  tr.appendChild(tdItem);
+  tr.appendChild(tdValue);
+  tr.appendChild(tdTotal);
+  tdQuantity.appendChild(textQuantity);
+  tdItem.appendChild(textItem);
+  if (quantity.value > 1) {
+    tdValue.appendChild(textValue);
+    tdTotal.appendChild(textTotal);
+  }
+  else{
+    tdTotal.appendChild(textTotal);
+  }
+  document.getElementById("tableInvoice").appendChild(tr);
+  
+  invoice.push(total);
 }
 
 function showTotal(){
   var soma = 0;
   
-  for(var i = 0; i < conta.length; i++){
-	    soma += conta[i];
+  for(var i = 0; i < invoice.length; i++){
+	    soma += invoice[i];
 	}
-
-  var t = document.createTextNode("Total: R$ "+ soma.toFixed(2));
-  var elemento2 = document.createElement("P");
-  elemento2.appendChild(t);
-  document.getElementById("invoice").appendChild(elemento2);
+  var table = document.createElement("table");
+  var pLine = document.createElement("p");
+  var trTotal = document.createElement("tr");
+  var tdTotal = document.createElement("td");
+  var textTotal = document.createTextNode("$ "+ soma.toFixed(2));
+  var textLine = document.createTextNode("------------------------------------------");
+  pLine.setAttribute('id', 'lineEnd');
+  document.getElementById('invoice').appendChild(pLine);
+  document.getElementById('invoice').appendChild(table)
+  table.appendChild(trTotal);
+  pLine.appendChild(textLine);
+  trTotal.appendChild(tdTotal);
+  tdTotal.setAttribute('style', 'text-align: right')
+  tdTotal.appendChild(textTotal);
+  
+  var regBtn = document.getElementsByName("reg");
+  var totalBtn = document.getElementsByName("total");
+  regBtn[0].classList.add("disabled");
+  totalBtn[0].classList.add("disabled");
 }
 
 function cleanInvoice(){
-  if(confirm("Você tem certeza que quer zerar os registros?")){
-    conta = [];
-    document.getElementById("invoice").innerHTML = "";
+  if(confirm("You realy want to do this?")){
+    invoice = [];
+    
+    var invoiceNode = document.getElementById("invoice")
+    var tables = document.getElementsByTagName("table");
+    for (var i = 0; i <= tables.length; i++) {
+      invoiceNode.removeChild(tables[0]);
+    }
+    invoiceNode.removeChild(document.getElementById('lineEnd'));
+
+    var table = document.createElement("table");
+    table.setAttribute('id', 'tableInvoice');
+    invoiceNode.appendChild(table);
+
+    var regBtn = document.getElementsByName("reg");
+    var totalBtn = document.getElementsByName("total");
+    
+    if (regBtn[0].classList.contains("disabled") && totalBtn[0].classList.contains("disabled")) {
+      regBtn[0].classList.remove("disabled");
+      totalBtn[0].classList.remove("disabled");
+    }    
   }
 }
 
