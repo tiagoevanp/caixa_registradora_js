@@ -21,8 +21,7 @@ footer {
 }
 
 #invoice {
-	height: 400px;
-	padding: 10px;
+	padding: 20px;
 }
 
 #invoice p, #invoice table {
